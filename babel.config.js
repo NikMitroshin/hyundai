@@ -8,6 +8,7 @@ module.exports = {
         alias: {
           navigation: './src/navigation',
           features: './src/features',
+          helpers: './src/helpers',
           screens: './src/screens',
           config: './src/config',
           store: './src/store',
