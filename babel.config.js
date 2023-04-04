@@ -9,6 +9,8 @@ module.exports = {
           navigation: './src/navigation',
           features: './src/features',
           helpers: './src/helpers',
+          clients: './src/clients',
+          services: './src/services',
           screens: './src/screens',
           config: './src/config',
           store: './src/store',

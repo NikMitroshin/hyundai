@@ -1,13 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import { GitHubEventItem } from 'features/events/types'
 import patchStateReducer from 'helpers/patchStateReducer'
 
 export interface EventsState {
   isInitEventsReady: boolean
+  eventsList: GitHubEventItem[]
 }
 
 const initialState: EventsState = {
   isInitEventsReady: false,
+  eventsList: [],
 }
 
 const eventsSlice = createSlice({
