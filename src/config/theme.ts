@@ -3,8 +3,16 @@ import { Dimensions } from 'react-native'
 
 const theme: Theme = {
   colors: {
-    primary: {
-      main: '#0350f5',
+    text: {
+      main: '#000',
+      light: '#fff',
+    },
+    background: {
+      main: '#002c5f',
+      light: '#f1f1f1',
+    },
+    button: {
+      main: '#00aad2',
     },
   },
   isSmall: Dimensions.get('window').height <= 667,

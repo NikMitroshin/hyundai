@@ -2,12 +2,15 @@ import React, { useCallback } from 'react'
 
 import styled from '@emotion/native'
 import { useFocusEffect } from '@react-navigation/native'
-import { Text } from 'react-native'
 
+import { DefaultTitle } from 'components/styled/Text'
+import EventsList from 'features/events/components/EventsList'
 import { fetchEvents } from 'features/events/store/actions/fetchEvents'
 import useAppDispatch from 'hooks/useAppDispatch'
 
 const EventsWrapper = styled.View``
+const Title = styled(DefaultTitle)``
+
 const Events: React.FC = () => {
   const dispatch = useAppDispatch()
   useFocusEffect(
@@ -24,7 +27,8 @@ const Events: React.FC = () => {
 
   return (
     <EventsWrapper>
-      <Text>123123</Text>
+      <Title>GitHub events list</Title>
+      <EventsList />
     </EventsWrapper>
   )
 }
