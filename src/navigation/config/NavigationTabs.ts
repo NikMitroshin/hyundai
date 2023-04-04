@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
-import MainScreen from 'screens/MainScreen/MainScreen'
-import SettingsScreen from 'screens/SettingsScreen/SettingsScreen'
+import ActionsScreen from 'screens/ActionsScreen/ActionsScreen'
+import EventsScreen from 'screens/EvestsScreen/EventsScreen'
 import { TabRouteNames } from 'types'
 
 interface Tab {
@@ -13,13 +13,13 @@ interface Tab {
 
 const NAVIGATION_TABS: Tab[] = [
   {
-    name: TabRouteNames.MAIN,
-    component: MainScreen,
+    name: TabRouteNames.EVENTS_SCREEN,
+    component: EventsScreen,
     isUnmountOnBlur: false,
   },
   {
-    name: TabRouteNames.SETTINGS,
-    component: SettingsScreen,
+    name: TabRouteNames.ACTIONS_SCREEN,
+    component: ActionsScreen,
     isUnmountOnBlur: true,
   },
 ]

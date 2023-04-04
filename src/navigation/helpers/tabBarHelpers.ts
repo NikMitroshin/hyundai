@@ -7,10 +7,10 @@ export const getTitleByRoute = (route: Partial<Route<string>>): string => {
   const routeName = getFocusedRouteNameFromRoute(route)
 
   switch (routeName) {
-    case TabRouteNames.MAIN:
-      return 'Main'
-    case TabRouteNames.SETTINGS:
-      return 'Settings'
+    case TabRouteNames.EVENTS_SCREEN:
+      return 'Events'
+    case TabRouteNames.ACTIONS_SCREEN:
+      return 'Actions'
     default:
       return 'Default Screen'
   }
@@ -18,10 +18,10 @@ export const getTitleByRoute = (route: Partial<Route<string>>): string => {
 
 export const getTabBarName = (name: TabRouteNames): string => {
   switch (name) {
-    case TabRouteNames.MAIN:
-      return 'Main'
-    case TabRouteNames.SETTINGS:
-      return 'Settings'
+    case TabRouteNames.EVENTS_SCREEN:
+      return 'Events'
+    case TabRouteNames.ACTIONS_SCREEN:
+      return 'Actions'
     default:
       return ''
   }

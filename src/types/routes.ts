@@ -2,8 +2,8 @@ import { RouteProp } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
 export enum TabRouteNames {
-  MAIN = 'Main',
-  SETTINGS = 'Settings',
+  EVENTS_SCREEN = 'Events',
+  ACTIONS_SCREEN = 'Actions',
 }
 export enum StackRouteNames {
   ROOT_TAB = 'ROOT_TAB',
