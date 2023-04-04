@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { GitHubEventItem } from 'features/events/types'
+import { GitHubEventItem } from 'features/eventsGH/types'
 import patchStateReducer from 'helpers/patchStateReducer'
 
 export interface EventsState {

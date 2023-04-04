@@ -1,5 +1,5 @@
 import { GitHubEventsResponseItem } from 'clients/gitHubClient/types'
-import { GitHubEventItem } from 'features/events/types'
+import { GitHubEventItem } from 'features/eventsGH/types'
 
 export const mapGitHubEventsData = (data: GitHubEventsResponseItem[]): GitHubEventItem[] =>
   data.map((item) => ({

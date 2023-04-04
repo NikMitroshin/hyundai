@@ -5,7 +5,7 @@ import { Linking } from 'react-native'
 import FastImage from 'react-native-fast-image'
 
 import { DefaultText } from 'components/styled/Text'
-import { GitHubEventItem } from 'features/events/types'
+import { GitHubEventItem } from 'features/eventsGH/types'
 
 const Wrapper = styled.View`
   padding: 10px;

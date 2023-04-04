@@ -3,8 +3,8 @@ import React from 'react'
 import styled from '@emotion/native'
 import { FlatList, RefreshControl } from 'react-native'
 
-import EventItem from 'features/events/components/EventItem'
-import { GitHubEventItem } from 'features/events/types'
+import EventItem from 'features/eventsGH/components/EventItem'
+import { GitHubEventItem } from 'features/eventsGH/types'
 import useAppSelector from 'hooks/useAppSelector'
 
 const Wrapper = styled.View`

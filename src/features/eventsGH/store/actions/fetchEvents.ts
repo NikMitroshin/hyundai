@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 import { getEventsList } from 'clients/gitHubClient'
-import { patchState } from 'features/events/store/index'
+import { patchState } from 'features/eventsGH/store/index'
 
 export const fetchEvents = createAsyncThunk('events/fetchEvents', async (_, thunkApi) => {
   const { dispatch } = thunkApi

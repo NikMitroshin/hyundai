@@ -2,7 +2,7 @@ import { Reducer } from '@reduxjs/toolkit'
 import { persistCombineReducers } from 'redux-persist'
 import { PersistConfig } from 'redux-persist/es/types'
 
-import eventsSlice, { EventsState } from 'features/events/store'
+import eventsSlice, { EventsState } from 'features/eventsGH/store'
 import testSlice, { TestState } from 'store/slices/testSlice'
 import mmkvStorage from 'store/storages/mmkvStorage'
 

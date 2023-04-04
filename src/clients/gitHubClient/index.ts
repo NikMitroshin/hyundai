@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { mapGitHubEventsData } from 'clients/gitHubClient/mappers'
 import { GitHubEventsResponse } from 'clients/gitHubClient/types'
-import { GitHubEventItem } from 'features/events/types'
+import { GitHubEventItem } from 'features/eventsGH/types'
 import { EnvConfigService } from 'services/EnvConfigService'
 
 const apiGitHub = axios.create({
