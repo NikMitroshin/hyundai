@@ -8,8 +8,13 @@ import EventsList from 'features/events/components/EventsList'
 import { fetchEvents } from 'features/events/store/actions/fetchEvents'
 import useAppDispatch from 'hooks/useAppDispatch'
 
-const EventsWrapper = styled.View``
-const Title = styled(DefaultTitle)``
+const EventsWrapper = styled.View`
+  padding: 20px 0;
+  background-color: ${({ theme }): string => theme.colors.background.white};
+`
+const Title = styled(DefaultTitle)`
+  margin-bottom: 20px;
+`
 
 const Events: React.FC = () => {
   const [isNeedTimer, setIsNeedTimer] = useState(false)

@@ -10,6 +10,7 @@ const theme: Theme = {
     background: {
       main: '#002c5f',
       light: '#f1f1f1',
+      white: '#fff',
     },
     button: {
       main: '#00aad2',

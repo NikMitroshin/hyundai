@@ -9,6 +9,6 @@ export const mapGitHubEventsData = (data: GitHubEventsResponseItem[]): GitHubEve
     authorId: item.actor.id,
     authorLogin: item.actor.display_login,
     authorAvatarUrl: item.actor.avatar_url,
-    authorUrl: item.actor.url,
+    authorUrl: `https://github.com/${item.actor.login}`,
     created_at: item.created_at,
   }))

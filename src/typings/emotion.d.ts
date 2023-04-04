@@ -10,6 +10,7 @@ declare module '@emotion/react' {
       background: {
         main: string
         light: string
+        white: string
       }
       button: {
         main: string

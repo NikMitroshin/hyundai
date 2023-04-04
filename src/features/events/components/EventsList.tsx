@@ -1,9 +1,16 @@
 import React from 'react'
 
-import { FlatList, RefreshControl, Text } from 'react-native'
+import styled from '@emotion/native'
+import { FlatList, RefreshControl } from 'react-native'
 
+import EventItem from 'features/events/components/EventItem'
 import { GitHubEventItem } from 'features/events/types'
 import useAppSelector from 'hooks/useAppSelector'
+
+const Wrapper = styled.View`
+  padding: 20px 0;
+  background-color: ${({ theme }): string => theme.colors.background.light};
+`
 
 interface Props {
   onRefresh: () => void
@@ -13,7 +20,7 @@ interface Props {
 const EventsList: React.FC<Props> = ({ onRefresh, isRefreshing }) => {
   const { eventsList } = useAppSelector((state) => state.events)
 
-  const renderItem = ({ item }: { item: GitHubEventItem }): JSX.Element => <Text>{item.authorLogin}</Text>
+  const renderItem = ({ item }: { item: GitHubEventItem }): JSX.Element => <EventItem key={item.id} item={item} />
 
   if (!eventsList.length) {
     // todo return empty
@@ -21,12 +28,14 @@ const EventsList: React.FC<Props> = ({ onRefresh, isRefreshing }) => {
   }
 
   return (
-    <FlatList
-      data={eventsList}
-      renderItem={renderItem}
-      refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />}
-      showsVerticalScrollIndicator={false}
-    />
+    <Wrapper>
+      <FlatList
+        data={eventsList}
+        renderItem={renderItem}
+        refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />}
+        showsVerticalScrollIndicator={false}
+      />
+    </Wrapper>
   )
 }
 
