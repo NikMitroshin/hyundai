@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import styled from '@emotion/native'
 import { useFocusEffect } from '@react-navigation/native'
@@ -12,23 +12,53 @@ const EventsWrapper = styled.View``
 const Title = styled(DefaultTitle)``
 
 const Events: React.FC = () => {
+  const [isNeedTimer, setIsNeedTimer] = useState(false)
+  const [isRefreshing, setIsRefreshing] = useState(false)
+
   const dispatch = useAppDispatch()
+
+  const getEvents = useCallback(() => {
+    void dispatch(fetchEvents())
+    setIsNeedTimer(true)
+  }, [])
+
   useFocusEffect(
     useCallback(() => {
-      const interval = setInterval(() => {
-        void dispatch(fetchEvents())
-      }, 1000 * 10)
+      getEvents()
 
-      return () => {
-        clearInterval(interval)
+      return (): void => {
+        setIsNeedTimer(false)
       }
     }, []),
   )
 
+  useEffect(() => {
+    const interval =
+      isNeedTimer && !isRefreshing
+        ? setInterval(() => {
+            getEvents()
+          }, 1000 * 30)
+        : null
+
+    if (isRefreshing) {
+      setIsRefreshing(false)
+    }
+
+    return () => {
+      clearInterval(interval as NodeJS.Timer)
+    }
+  }, [isNeedTimer, isRefreshing])
+
+  // refresh
+  const onRefresh = (): void => {
+    setIsRefreshing(true)
+    getEvents()
+  }
+
   return (
     <EventsWrapper>
       <Title>GitHub events list</Title>
-      <EventsList />
+      <EventsList onRefresh={onRefresh} isRefreshing={isRefreshing} />
     </EventsWrapper>
   )
 }
