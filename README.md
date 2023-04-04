@@ -1,2 +1,2 @@
-# hyundai
-test app hyundai
+# boilerplate-rn
+Boilerplate RN project
