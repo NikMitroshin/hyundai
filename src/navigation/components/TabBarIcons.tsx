@@ -11,9 +11,9 @@ interface Params {
 
 export const getTabBarIcon = ({ focused, name }: Params): JSX.Element | undefined => {
   switch (name) {
-    case TabRouteNames.MAIN:
+    case TabRouteNames.EVENTS_SCREEN:
       return <HistoryIcon focused={focused} />
-    case TabRouteNames.SETTINGS:
+    case TabRouteNames.ACTIONS_SCREEN:
       return <WalletsIcon focused={focused} />
     default:
       return undefined

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useTheme } from '@emotion/react'
 import Svg, { Path, Rect } from 'react-native-svg'
 
 interface Props {
@@ -7,7 +8,8 @@ interface Props {
 }
 
 const HistoryIcon: React.FC<Props> = ({ focused }) => {
-  const stroke = focused ? '#000' : '#ccc'
+  const theme = useTheme()
+  const stroke = focused ? theme.colors.button.main : theme.colors.text.main
 
   return (
     <Svg width='24' height='24' fill='none'>
